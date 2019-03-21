@@ -56,6 +56,7 @@ exports.getPageData = async options => {
 		browserOptions.headless = options.browserHeadless && !options.browserDebug;
 	}
 	browserOptions.args = [];
+	browserOptions.args.push("--no-sandbox");
 	if (options.browserDisableWebSecurity === undefined || options.browserDisableWebSecurity) {
 		browserOptions.args.push("--disable-web-security");
 		browserOptions.args.push("--no-pings");
